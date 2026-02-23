@@ -6,14 +6,14 @@ If you want to practice in the *exact* environment you'll face on exam day, this
 
 ---
 
-## ✨ Awesome Features
-* **Real NTA Look & Feel:** Replaces the standard MARKS design with the official NTA blue/gray interface, question palette, and button layout.
-* **Question Palette State:** Tracks your "Answered" (Green), "Not Answered" (Red), and "Marked for Review" (Purple) questions automatically.
-* **Keyboard Shortcuts:** Answer questions blazing fast without using your mouse!
-* **Text Size Adjusters (A-, A, A+):** Just like the real exam, change the font size if you need the text bigger or smaller.
-* **Fullscreen Mode:** Lock yourself into the exam screen with zero distractions.
-* **Custom Profile:** Put your own Name, Exam Name, and Profile Picture on the sidebar.
+## ⚠️ Disclaimer
 
+**This is an unofficial, open-source, third-party tool.** 
+This extension is **not** affiliated with, endorsed by, or sponsored by the MARKS App, MathonGo, or the National Testing Agency (NTA). 
+
+* This extension does not bypass any paywalls or grant free access to premium content. You must have your own account and access to the MARKS app.
+* It operates entirely on the client-side (in your browser) by simply applying custom CSS themes and basic JavaScript shortcuts to the existing DOM. No data is collected, and no servers are harmed.
+* **Use responsibly:** Do not use the keyboard shortcuts to spam the servers at bot-like speeds, as this may trigger automated anti-bot protections on the website. Use at your own risk.
 ---
 
 ## 🛠️ How to Install (For Beginners!)
