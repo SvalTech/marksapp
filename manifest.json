@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "NTA Theme for MARKS App",
+    "version": "1.0",
+    "description": "Transforms the MARKS app into a highly realistic and functional NTA (JEE/NEET) CBT exam environment.",
+    "permissions": [
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://getmarks.app/*",
+                "*://*.getmarks.app/*"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}

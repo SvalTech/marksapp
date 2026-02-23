@@ -1,0 +1,246 @@
+/* --- CORE NTA LAYOUT OVERRIDES --- */
+:root {
+  --nta-font-scale: 1;
+}
+
+body.nta-mode {
+  font-family: Arial, Helvetica, sans-serif !important;
+  margin: 0 !important;
+  overflow: hidden !important; 
+  background-color: inherit !important;
+}
+
+/* Force NTA-style typography and legible sizing constraints */
+body.nta-mode #__next .question-body,
+body.nta-mode #__next .question-body p,
+body.nta-mode #__next .question-options_text,
+body.nta-mode #__next .question-options_text p {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: calc(15px * var(--nta-font-scale)) !important;
+  line-height: calc(1.6 * var(--nta-font-scale)) !important;
+}
+
+/* Hide native MARKS app header and footers to avoid clutter */
+body.nta-mode header,
+body.nta-mode nav,
+body.nta-mode footer {
+  display: none !important;
+}
+
+/* Squish the MARKS app securely to make room for our Sidebar & Footer */
+body.nta-mode #__next {
+  position: fixed !important;
+  top: 50px !important;
+  left: 0 !important;
+  width: calc(100vw - 320px) !important; 
+  height: calc(100vh - 120px) !important; 
+  overflow-y: auto !important;
+  border-right: 2px solid #ccc !important;
+  box-sizing: border-box !important;
+  padding: 10px !important; /* Reduced Padding */
+  background-color: inherit !important;
+}
+
+/* Normalize specific MARKS native padding classes */
+body.nta-mode #__next .pt-\[56px\] { padding-top: 10px !important; }
+body.nta-mode #__next .pb-20 { padding-bottom: 20px !important; }
+
+/* --- FORMATTING OPTIONS TO MATCH NTA --- */
+body.nta-mode #__next button[role="radio"],
+body.nta-mode #__next div[role="radio"],
+body.nta-mode #__next .cursor-pointer {
+  border-radius: 4px !important;
+  border: 1px solid #b0b0b0 !important;
+  margin-bottom: 10px !important;
+  padding: 10px 14px !important;
+  transition: background-color 0.15s ease !important;
+}
+
+body.nta-mode #__next button[role="radio"]:hover,
+body.nta-mode #__next div[role="radio"]:hover { background-color: #f8f8f8 !important; }
+
+body.nta-mode.nta-dark-theme #__next button[role="radio"]:hover,
+body.nta-mode.nta-dark-theme #__next div[role="radio"]:hover { background-color: #3a3a3a !important; }
+
+body.nta-mode #__next .bg-blue-500, 
+body.nta-mode #__next .border-blue-500, 
+body.nta-mode #__next [aria-checked="true"], 
+body.nta-mode #__next [data-selected="true"] {
+  background-color: #dceaf7 !important;
+  border-color: #2c72b2 !important;
+  color: #000 !important;
+}
+
+body.nta-mode.nta-dark-theme #__next .bg-blue-500, 
+body.nta-mode.nta-dark-theme #__next .border-blue-500, 
+body.nta-mode.nta-dark-theme #__next [aria-checked="true"], 
+body.nta-mode.nta-dark-theme #__next [data-selected="true"] {
+  background-color: #1a4d7c !important;
+  border-color: #63b3ed !important;
+  color: #fff !important;
+}
+
+
+/* --- LIGHT MODE SPECIFIC (Default) --- */
+body.nta-mode:not(.nta-dark-theme) { background-color: #fff !important; }
+body.nta-mode:not(.nta-dark-theme) #__next { background-color: #ffffff !important; color: #000000 !important; }
+body.nta-mode:not(.nta-dark-theme) .nta-profile-details { color: #333 !important; }
+body.nta-mode:not(.nta-dark-theme) .nta-profile-details strong { color: #000 !important; }
+body.nta-mode:not(.nta-dark-theme) .legend-item { color: #333 !important; }
+
+/* --- DARK MODE SPECIFIC --- */
+body.nta-mode.nta-dark-theme { background-color: #121212 !important; }
+body.nta-mode.nta-dark-theme #__next { background-color: #121212 !important; color: #e0e0e0 !important; border-color: #333 !important; }
+body.nta-mode.nta-dark-theme #nta-sidebar,
+body.nta-mode.nta-dark-theme #nta-footer { background-color: #1e1e1e !important; border-color: #333 !important; }
+body.nta-mode.nta-dark-theme .nta-profile,
+body.nta-mode.nta-dark-theme .nta-legend-box { background-color: #2a2a2a !important; border-color: #333 !important; }
+body.nta-mode.nta-dark-theme .nta-profile-details,
+body.nta-mode.nta-dark-theme .nta-profile-details strong,
+body.nta-mode.nta-dark-theme .legend-item { color: #e0e0e0 !important; }
+body.nta-mode.nta-dark-theme .nta-palette-grid { background-color: #1a202c !important; }
+body.nta-mode.nta-dark-theme .nta-action-btn { background-color: #333 !important; color: #e0e0e0 !important; border-color: #555 !important; }
+body.nta-mode.nta-dark-theme .nta-action-btn:hover { background-color: #444 !important; }
+
+/* --- NTA MOCK HEADER --- */
+#nta-mock-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #2c72b2; 
+  color: white !important;
+  z-index: 41; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 3px solid #1a4d7c;
+}
+
+.nta-header-left, .nta-header-center, .nta-header-right { 
+  display: flex; 
+  align-items: center; 
+  gap: 15px; 
+}
+
+/* Font Adjusters */
+.nta-font-btn {
+  background: white;
+  color: #2c72b2;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.nta-font-btn:hover { background: #e0e0e0; }
+
+.nta-back-btn { background: transparent; border: none; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 4px; border-radius: 4px; }
+.nta-back-btn:hover { background: rgba(255, 255, 255, 0.2); }
+
+.nta-reset-btn {
+  background: #d9534f;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+.nta-reset-btn:hover { filter: brightness(0.9); }
+
+.nta-branding { font-size: 12px; font-weight: normal; opacity: 0.95; }
+.nta-branding a { color: #ffd700; text-decoration: none; font-weight: bold; }
+.nta-branding a:hover { text-decoration: underline; }
+
+/* --- NTA SIDEBAR --- */
+#nta-sidebar {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  width: 320px;
+  height: calc(100vh - 50px);
+  background-color: #e4e4e4; 
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.nta-profile { display: flex; padding: 10px; background: white; border-bottom: 2px solid #ccc; align-items: center; }
+.nta-profile img { width: 60px; height: 70px; background: #ddd; border: 1px solid #999; margin-right: 15px; object-fit: cover; }
+.nta-profile-details { font-size: 13px; }
+.nta-profile-details strong { display: block; font-size: 15px; margin-bottom: 4px; }
+.nta-legend-box { background: #e8f0fe; padding: 10px; border-bottom: 1px solid #ccc; font-size: 12px; }
+.nta-legend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.legend-item { display: flex; align-items: center; gap: 8px; }
+
+/* Authentic NTA Status Shapes */
+.nta-badge { width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; color: white !important; font-weight: bold; font-size: 12px; box-shadow: inset 0px -2px 0px rgba(0,0,0,0.2); }
+.badge-not-visited { background: #fff; color: #333 !important; border: 1px solid #999; box-shadow: none; }
+body.nta-mode.nta-dark-theme .badge-not-visited { background: #333; color: #fff !important; border-color: #666; }
+.badge-not-answered { background: #d9534f; border-radius: 0 0 15px 15px; }
+.badge-answered { background: #5cb85c; border-radius: 15px 15px 0 0; }
+.badge-marked { background: #5bc0de; border-radius: 50%; }
+.badge-ans-marked { background: #5bc0de; border-radius: 50%; position: relative; }
+.badge-ans-marked::after { content: ''; position: absolute; bottom: 2px; right: 2px; width: 8px; height: 8px; background: #5cb85c; border-radius: 50%; border: 1px solid white; }
+
+.nta-palette-header { background: #2c72b2; color: white !important; padding: 8px; text-align: center; font-weight: bold; font-size: 14px; }
+.nta-palette-grid { padding: 12px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; align-content: start; overflow-y: auto; background: #b5cbe0; flex-grow: 1; }
+.nta-palette-grid .nta-badge { width: 42px; height: 42px; font-size: 14px; cursor: pointer; transition: transform 0.1s ease; margin: 0 auto; }
+.nta-palette-grid .nta-badge:hover { opacity: 0.8; transform: scale(1.05); }
+.nta-palette-grid .badge-active { border: 2px solid #000 !important; transform: scale(1.1); box-shadow: 0 0 6px rgba(0,0,0,0.4); z-index: 2; }
+body.nta-mode.nta-dark-theme .nta-palette-grid .badge-active { border-color: #fff !important; }
+
+/* --- NTA FOOTER ACTIONS --- */
+#nta-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100vw - 320px);
+  height: 70px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 40;
+}
+.nta-btn-group { display: flex; gap: 10px; }
+.nta-action-btn { padding: 10px 15px; border: 1px solid #ccc !important; background: white !important; color: #333 !important; font-size: 14px; cursor: pointer; border-radius: 2px !important; text-transform: uppercase; font-weight: normal !important; }
+.nta-action-btn:hover { background: #e9e9e9 !important; }
+.btn-green { background: #5cb85c !important; color: white !important; border-color: #4cae4c !important; }
+.btn-green:hover { background: #4cae4c !important; }
+.btn-blue { background: #2c72b2 !important; color: white !important; border-color: #1a4d7c !important; }
+.btn-blue:hover { background: #1a4d7c !important; }
+
+/* --- HIDE UI STATE (When modals are open) --- */
+body.nta-mode.nta-ui-hidden #nta-mock-header,
+body.nta-mode.nta-ui-hidden #nta-sidebar,
+body.nta-mode.nta-ui-hidden #nta-footer {
+  display: none !important;
+}
+
+body.nta-mode.nta-ui-hidden #__next {
+  width: 100vw !important;
+  height: 100vh !important;
+  top: 0 !important;
+  left: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
